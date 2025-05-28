@@ -16,12 +16,6 @@ main:
 	mov x21,SCREEN_WIDTH
 	mov x22,SCREEN_HEIGH
 	
-<<<<<<< HEAD
-	movz w12, 0xFF, lsl 16
-	movk w12, 0xFFFF, lsl 00
-	bl primer_color
-
-=======
 	movz w12, 0x00, lsl 16
 	movk w12, 0x0100, lsl 00
 	bl fondo   // 000000000000000011111111
@@ -50,7 +44,7 @@ main:
 	bl cuadrado
 
 
->>>>>>> 4b84d58 (Agregar Fondo, un sol y Color)
+
 	//edificio 1
 	movz w12, 0x00, lsl 16
 	movk w12, 0x0000, lsl 00
@@ -66,7 +60,6 @@ main:
 	mov x2, 40   //ancho
 	mov x3, 20    //alto
 	bl cuadrado
-<<<<<<< HEAD
 
 	//edificio 2
 	mov x0, 240   //x
@@ -74,91 +67,6 @@ main:
 	mov x2, 200   //ancho
 	mov x3, 120    //alto
 	bl cuadrado
-=======
-
-	//edificio 2
-	mov x0, 240   //x
-	mov x1, 360   //y
-	mov x2, 200   //ancho
-	mov x3, 120    //alto
-	bl cuadrado
-
-	//edificio 3
-	mov x0, 520   //x
-	mov x1, 0   //y
-	mov x2, 120   //ancho
-	mov x3, 480    //alto
-	bl cuadrado
-	
-	//techo 1
-	mov x0, 0   //x
-	mov x1, 280   //y
-	mov x2, 220   //ancho
-	mov x3, 40    //alto
-	bl cuadrado
-
-	//techo 2
-	mov x0, 220   //x
-	mov x1, 340   //y
-	mov x2, 240   //ancho
-	mov x3, 40    //alto
-	bl cuadrado
-
-  //balcon 1
-	mov x0, 480   //x
-	mov x1, 0   //y
-	mov x2, 40   //ancho
-	mov x3, 40    //alto
-	bl cuadrado
-	
-	//balcon 2
-	mov x0, 480   //x
-	mov x1, 160   //y
-	mov x2, 40   //ancho
-	mov x3, 40    //alto
-	bl cuadrado
-
-	//balcon 3
-	mov x0, 480   //x
-	mov x1, 320   //y
-	mov x2, 40   //ancho
-	mov x3, 40    //alto
-	bl cuadrado
-
-	//ventana
-	movz w12, 0xec, lsl 16
-	movk w12, 0xc457, lsl 00
-	mov x0, 560   //x
-	mov x1, 80   //y
-	mov x2, 80   //ancho
-	mov x3, 80    //alto
-	bl cuadrado
-	
-	//ventana2
-	mov x0, 560   //x
-	mov x1, 240   //y
-	mov x2, 80   //ancho
-	mov x3, 80    //alto
-	bl cuadrado
-	
-	//ventana3
-	mov x0, 560   //x
-	mov x1, 400   //y
-	mov x2, 80   //ancho
-	mov x3, 80    //alto
-	bl cuadrado
-
-		// //cuerpo
-	//movz w12, 0x00, lsl 16
-	// movk w12, 0x0000, lsl 00
-	// mov x0, 100   //x
-	// mov x1, 200   //y
-	// mov x2, 380   //ancho
-	// mov x3, 240    //alto
-	// bl cuadrado
-    
-
->>>>>>> 4b84d58 (Agregar Fondo, un sol y Color)
 
 	//edificio 3
 	mov x0, 520   //x
@@ -250,13 +158,8 @@ main:
 InfLoop:
 	b InfLoop
 //----------------------------------------------------------------------------
-<<<<<<< HEAD
-primer_color:
-	stp x5, x6, [sp,#-16]
-=======
 fondo:
 	stp x5, x6, [sp,#16]
->>>>>>> 4b84d58 (Agregar Fondo, un sol y Color)
 	mov x5, sp
 	mov x0,x20
 	mov x1,x21
@@ -270,27 +173,19 @@ loop0:
 	add x0,x0,4	   // Siguiente pixel
 	sub x4,x4,1	   // Decrementar contador X
 	cbnz x4, loop0  // Si no terminó la fila, salto
-<<<<<<< HEAD
-	sub x3,x3,1	   // Decrementar contador Y
-=======
 
 	sub x3,x3,1	   // Decrementar contador Y
 	sub w15, w12, 0x0001ff
 	cbnz w15, color
 
->>>>>>> 4b84d58 (Agregar Fondo, un sol y Color)
 	cbnz x3, loop1  // Si no es la última fila, salto
 	ldp x5, x6, [sp], 16
 	ret
 
 //-------------------------------------------------------------------
-<<<<<<< HEAD
-
-=======
 color:
 	add w12,w12,1
 	b loop1
->>>>>>> 4b84d58 (Agregar Fondo, un sol y Color)
 cuadrado:
 	stp x5, x6, [sp, #-16]
 	stp x7, x8, [sp, #-16]
@@ -322,8 +217,4 @@ columnas:
 	ldp x5, x6, [sp], 16
 	ret
 //--------------------------------------------------
-<<<<<<< HEAD
-
-=======
  
->>>>>>> 4b84d58 (Agregar Fondo, un sol y Color)
