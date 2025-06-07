@@ -11,3 +11,10 @@ Descripción ejercicio 2:
 Para este caso, la idea principal era poder hacer que el gato salte y camine asi los lados.
 Se impletaron las mismas rutinas que en el ejercicio 1, se agregaron ciclos para que el gato pueda moverse y saltar.
 
+Justificacion instrucciones ARMv8:
+mul: multiplicaciones
+cmp: utilizada para la comparacion
+str/stp: guardado de multiples registros
+ldr/ldp: libera registros guardados 
+bl: salta a subrutina (guarda la direccion de retorno)
+ret: salta al registro x30 
